@@ -10,23 +10,29 @@ import Card from './components/card/card.jsx';
 
 function App() {
   const [inputValue, setInputValue] = useState('');
-  const debouncedInputValue = useDebounce(inputValue, 500); 
-  const [x] = useState('Lol');
-  console.log(x);
+  const [items, setItems] = useState([]);
+  const debouncedInputValue = useDebounce(inputValue, 1000); 
+
+  const fecthData = (search) => {
+    const searchString = search ? `&search=${search}` : '';
+    fetch(`https://drop-api.ea.com/rating/fc-24?limit=30${searchString}`)
+      .then(response => response.json())
+      .then(data => {
+        setItems(data.items);
+      })
+      .catch(error => {
+        console.error('Error:', error)
+        setItems([])
+      });
+  }
+  
+  useEffect(() => {
+    if(debouncedInputValue.length >= 3) fecthData(debouncedInputValue)
+  }, [debouncedInputValue]);
 
   const handleClearInput = () => {
     setInputValue('');
   };
-
-  useEffect(() => {
-    if (debouncedInputValue) {
-      const interval = setInterval(() => {
-        console.log(debouncedInputValue);
-      }, 1000);
-
-      return () => clearInterval(interval);
-    }
-  }, [debouncedInputValue]);
 
 
 
@@ -37,6 +43,7 @@ function App() {
           <TextField
             className="box__input"
             placeholder="Enter text"
+            minLength={3}
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             sx={{ width: '100%' }}
@@ -51,7 +58,9 @@ function App() {
               ),}}
           />
           <div className="card-box">
-          <Card/>
+          <div id="box-inner">
+            {items.map((card) => <Card key={card.id} card={card}/>)}
+          </div>
         </div>
         </div>
       </Container>
