@@ -14,7 +14,7 @@ function App() {
   const debouncedInputValue = useDebounce(inputValue, 1000); 
 
   const fecthData = (search) => {
-    const searchString = search ? `&search=${search}` : '';
+    const searchString = search.length >= 3 ? `&search=${search}` : '';
     fetch(`https://drop-api.ea.com/rating/fc-24?limit=30${searchString}`)
       .then(response => response.json())
       .then(data => {
@@ -27,7 +27,7 @@ function App() {
   }
   
   useEffect(() => {
-    if(debouncedInputValue.length >= 3) fecthData(debouncedInputValue)
+    fecthData(debouncedInputValue)
   }, [debouncedInputValue]);
 
   const handleClearInput = () => {
