@@ -1,0 +1,23 @@
+* { 
+    margin: 0px;
+    padding: 0px; 
+    box-sizing: border-box;
+}
+
+.wrapper { 
+    margin-top: 20px;
+}
+
+.box { 
+    width: 100%; 
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 15px;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.card-box {
+    margin-top: 40px;
+}
+
