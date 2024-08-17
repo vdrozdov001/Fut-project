@@ -11,8 +11,14 @@
     flex-wrap: wrap;
     max-height: 600px;
     overflow: scroll;
+    max-width: 800px;
 }
 
 .content-item { 
     margin: 7px;
+    max-width: 180px;
+}
+
+.content-item img { 
+    width: 100%;
 }

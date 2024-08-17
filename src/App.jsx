@@ -7,6 +7,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import InputAdornment from '@mui/material/InputAdornment';
 import useDebounce from './hooks/useDebounce.js'; 
 import Card from './components/card/card.jsx';
+import Filter from './components/filter/filter.jsx';
 
 function App() {
   const [inputValue, setInputValue] = useState('');
@@ -40,6 +41,7 @@ function App() {
     <div className="wrapper">
       <Container>
         <div className="box">
+          <div className="left-block">
           <TextField
             className="box__input"
             placeholder="Enter text"
@@ -61,6 +63,10 @@ function App() {
           <div id="box-inner">
             {items.map((card) => <Card key={card.id} card={card}/>)}
           </div>
+        </div>
+        </div>
+        <div className="right-block">
+              <Filter/>
         </div>
         </div>
       </Container>
