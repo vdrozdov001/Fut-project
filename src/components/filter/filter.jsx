@@ -16,7 +16,7 @@ const filter = () => {
            id="combo-box-demo"
            options={NATIONALITIES}
            onChange={(_ev, val) => console.log(val)}
-           sx={{ width: 300 }}
+           sx={{ width: '100%' }}
            renderInput={(params) => <TextField {...params} label="Nationality" />}
           />
           <Autocomplete
@@ -24,7 +24,7 @@ const filter = () => {
            className='filter-input'
            id="combo-box-demo"
            options={POSITIONS}
-           sx={{ width: 300 }}
+           sx={{ width: '100%' }}
            renderInput={(params) => <TextField {...params} label="Position" />}
           />
           <Autocomplete
@@ -32,7 +32,7 @@ const filter = () => {
            className='filter-input'
            id="combo-box-demo"
            options={GENDER}
-           sx={{ width: 300 }}
+           sx={{ width: '100%' }}
            renderInput={(params) => <TextField {...params} label="Gender" />}
           />
         </div>

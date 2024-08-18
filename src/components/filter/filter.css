@@ -5,4 +5,9 @@
 
 .filter-input { 
     margin: 15px auto 0px auto;
+    width: 100%;
+}
+
+.filter-inner { 
+    height: 100%;
 }

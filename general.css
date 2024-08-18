@@ -5,14 +5,15 @@
 }
 
 .wrapper { 
-    height: 100vh;
+    height: 90vh;
 }
 
 .box { 
     width: 100%; 
     border: 1px solid #000;
     border-radius: 4px;
-    height: 100vh;
+    height: 100%;
+    margin-top: 15px;
     overflow: hidden;
     display: flex;
 }
@@ -26,12 +27,12 @@
 }
 
 .left-block { 
-    padding: 20px 0px 0px 15px;
+    padding: 10px 10px 0px 10px;
     min-width: 767px;
 }
 
 .right-block {
     flex: 1;
     border-left: 1px solid #000;
-    padding-top: 20px;
+    padding: 10px 10px 0px 10px;
 }

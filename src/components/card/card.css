@@ -11,7 +11,7 @@
     flex-wrap: wrap;
     max-height: 700px;
     overflow: scroll;
-    max-width: 800px;
+    max-width: 776px;
 }
 
 .content-item { 
@@ -19,6 +19,6 @@
     max-width: 180px;
 }
 
-.content-item img { 
+.content-item img {
     width: 100%;
 }
