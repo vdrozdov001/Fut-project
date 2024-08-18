@@ -1,7 +1,7 @@
 import './filter.css'
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-
+import { NATIONALITIES } from './filterData'
 
 const filter = () => { 
     return( 
@@ -12,9 +12,10 @@ const filter = () => {
            className='filter-input'
            disablePortal
            id="combo-box-demo"
-           options={top100Films}
+           options={NATIONALITIES}
+           onChange={(_ev, val) => console.log(val)}
            sx={{ width: 300 }}
-           renderInput={(params) => <TextField {...params} label="Movie" />}
+           renderInput={(params) => <TextField {...params} label="Nationality" />}
           />
           <Autocomplete
            disablePortal
